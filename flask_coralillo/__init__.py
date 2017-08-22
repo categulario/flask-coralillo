@@ -1,4 +1,4 @@
-from norm import Engine
+from coralillo import Engine
 from flask import current_app
 
 # Find the stack on which we want to store the database connection.
@@ -10,7 +10,7 @@ except ImportError:
     from flask import _request_ctx_stack as stack
 
 
-class Norm(object):
+class Coralillo(object):
 
     def __init__(self, app=None, config_prefix='REDIS'):
         self.app = app

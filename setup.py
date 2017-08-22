@@ -2,23 +2,23 @@ from setuptools import setup
 
 
 setup(
-    name='Flask-Norm',
+    name='Flask-Coralillo',
     version='1.0',
-    url='http://categulario.github.io/flask_norm',
+    url='http://categulario.github.io/flask_coralillo',
     license='MIT',
     author='Abraham Toriz Cruz',
     author_email='categulario@gmail.com',
-    description='Flask module for the Norm redis ORM',
+    description='Flask module for the Coralillo redis ORM',
     long_description=__doc__,
-    packages=['flask_norm'],
+    packages=['flask_coralillo'],
     zip_safe=False,
     include_package_data=True,
     platforms='any',
     install_requires=[
         'Flask',
-        'norm',
+        'coralillo',
     ],
-    test_suite = 'flask_norm.tests.test_flask_norm',
+    test_suite = 'flask_coralillo.tests.test_flask_coralillo',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
