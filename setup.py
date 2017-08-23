@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Flask-Coralillo',
-    version='0.1.0',
+    version='0.1.1',
     url='http://categulario.github.io/flask_coralillo',
     license='MIT',
     author='Abraham Toriz Cruz',
