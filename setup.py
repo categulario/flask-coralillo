@@ -1,16 +1,16 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
     name='Flask-Coralillo',
-    version='1.0',
+    version='0.1.0',
     url='http://categulario.github.io/flask_coralillo',
     license='MIT',
     author='Abraham Toriz Cruz',
     author_email='categulario@gmail.com',
     description='Flask module for the Coralillo redis ORM',
     long_description=__doc__,
-    packages=['flask_coralillo'],
+    packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
     platforms='any',
