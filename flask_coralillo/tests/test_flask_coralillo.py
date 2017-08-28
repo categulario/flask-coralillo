@@ -24,14 +24,14 @@ class InitTestCase(unittest.TestCase):
         After Coralillo.init_app(app) is called, the connection will be
         initialized."""
         coralillo = Coralillo()
-        assert coralillo.redis is None
-        assert coralillo.lua is None
+
+        assert coralillo._engine is None
 
         coralillo.init_app(self.app)
 
+        assert coralillo._engine is not None
         assert coralillo.redis is not None
         assert coralillo.lua is not None
-
 
     def test_custom_prefix(self):
         """Test that config prefixes enable distinct connections"""
@@ -43,6 +43,21 @@ class InitTestCase(unittest.TestCase):
 
         assert coralillo_a.redis.connection_pool.connection_kwargs['db'] == 1
         assert coralillo_b.redis.connection_pool.connection_kwargs['db'] == 2
+
+    def test_custom_id_function(self):
+        def simple_ids():
+            from random import choice
+
+            return ''.join(choice('1234567890') for c in range(10))
+
+        eng = Coralillo(self.app)
+        custom_eng = Coralillo(self.app, id_function=simple_ids)
+
+        old_id = eng.id_function()
+        new_id = custom_eng.id_function()
+
+        self.assertEqual(len(old_id), 32)
+        self.assertEqual(len(new_id), 10)
 
 
 if __name__ == '__main__':
