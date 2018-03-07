@@ -1,15 +1,21 @@
 from setuptools import setup, find_packages
+from os import path
 
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.rst')) as f:
+    long_description = f.read()
 
 setup(
     name='Flask-Coralillo',
-    version='0.1.2',
-    url='http://categulario.github.io/flask_coralillo',
+    version='0.1.3',
+    url='https://github.com/getfleety/flask-coralillo',
     license='MIT',
     author='Abraham Toriz Cruz',
     author_email='categulario@gmail.com',
     description='Flask module for the Coralillo redis ORM',
-    long_description=__doc__,
+    long_description=long_description,
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
