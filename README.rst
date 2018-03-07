@@ -1,6 +1,9 @@
 Flask Coralillo
 ===============
 
+.. image:: https://travis-ci.org/getfleety/flask-coralillo.svg?branch=master
+    :target: https://travis-ci.org/getfleety/flask-coralillo
+
 Integrates the Coralillo Redis ORM into flask
 
 Usage
